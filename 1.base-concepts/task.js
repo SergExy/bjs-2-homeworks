@@ -31,16 +31,16 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 		return sym;
 	}
 
-let P = percent / 12 / 100;
-let S = amount - contribution;
-let n = countMonths;
+let paymentMonth = percent / 12 / 100;
+let difference = amount - contribution;
+let month = countMonths;
 
 
-let res = S * (P + (P / (((1 + P)**n) - 1))); //.toFixed(7);
-let sym = res * countMonths;
-sym = sym.toFixed(2);
-isNaN(sym)
-return sym
+let amount = difference * (paymentMonth + (paymentMonth / (((1 + paymentMonth)** month) - 1))); //.toFixed(7);
+let amountMonth = amount * countMonths;
+amountMonth = amountMonth.toFixed(2);
+isNaN(amountMonth)
+return amountMonth
 }
 
 
