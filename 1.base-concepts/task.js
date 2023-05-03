@@ -33,11 +33,11 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 let paymentMonth = percent / 12 / 100;
 let difference = amount - contribution;
-let month = countMonths;
+let howManyMonths = countMonths;
 
 
-let amount = difference * (paymentMonth + (paymentMonth / (((1 + paymentMonth)** month) - 1))); //.toFixed(7);
-let amountMonth = amount * countMonths;
+let monthlyPaymentAmount = difference * (paymentMonth + (paymentMonth / (((1 + paymentMonth)** howManyMonths) - 1)));
+let amountMonth = monthlyPaymentAmount * howManyMonths;
 amountMonth = amountMonth.toFixed(2);
 isNaN(amountMonth)
 return amountMonth
