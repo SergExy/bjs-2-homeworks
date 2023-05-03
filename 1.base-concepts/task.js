@@ -28,7 +28,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 
 	if  (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
-		return sym;
+		return amountMonth;
 	}
 
 let paymentMonth = percent / 12 / 100;
