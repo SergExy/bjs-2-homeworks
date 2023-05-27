@@ -36,9 +36,6 @@ console.log(summElementsWorker(10, 10, 10, 10));
 /////////////////////////
 
 function differenceMaxMinWorker(...arr) {
-  if (arr.length == 0) {
-    return 0;
-  }
   let min = arr[0];
   let max = arr[0];
   difference = 0;
@@ -79,10 +76,6 @@ console.log(differenceEvenOddWorker(94, 51, 57, 41, 47, 66, 58, 10, 38, 17));
 
 /////////////////////////
 function averageEvenElementsWorker(...arr) {
-  if (arr.length == 0) {
-    return 0;
-  }
-
   let sumEvenElement = 0;
   let countEvenElement = 0;
   difference = 0;
@@ -112,7 +105,7 @@ function makeWork(arrOfArr, func) {
       maxWorkerResult = max;
     }
   }
-  return maxWorkerResult;
+  return `максимум из ${functionResult.join()} => ${maxWorkerResult} `
 }
 
 const arr = [[10, 10, 11, 20, 10], [67, 10, 2, 39, 88], [72, 75, 51, 87, 43], [30, 41, 55, 96, 62]];
