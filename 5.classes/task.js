@@ -35,15 +35,15 @@ class Magazine extends PrintEditionItem {
     }
 }
 
-class book extends PrintEditionItem {
-    constructor(name, releaseDate, pagesCount) {
+class Book extends PrintEditionItem {
+    constructor(author, name, releaseDate, pagesCount) {
         super(name, releaseDate, pagesCount);
         this.name = author;
         this.type = "book";
     }
 }
 
-class NoveBook extends book {
+class NovelBook extends book {
     constructor(name, releaseDate, pagesCount) {
         super(name, releaseDate, pagesCount);
         this.type = "novel";
@@ -74,14 +74,14 @@ class Library {
     }
     addBook(book) {
         if (book.state > 30) {
-            this.books.push(books);
+            this.books.push(book);
         }
     }
     findBookBy(type, value) {
         for (let i = 0; i < this.books.length; i++) {
             if (this.books[i][type] === value) {
                 return this.books[i];
-            }   
+            }
         }
         return null;
     }
@@ -90,10 +90,10 @@ class Library {
     giveBookByName(bookName) {
         for (let i = 0; i < this.books.length; i++) {
             if (this.books[i].name === bookName) {
-                let book = this.books[i] ;
+                let book = this.books[i];
                 this.books.splice(i, 1);
                 return book;
-            }   
+            }
         }
         return null;
     }
